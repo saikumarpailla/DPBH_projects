@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="stylesheet" href="css/popup.css" type="text/css">
+    <script src="js/popup.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .modal-container {
+            position: relative;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 300px;
+            background-color: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2), 0px 6px 12px rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .modal-container:hover {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3), 0px 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-header {
+            background-color: #0000cc;
+            padding: 15px;
+            text-align: center;
+            color: #FFFFFF;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .modal-header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .modal-content {
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .number {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .detect-button {
+            display: block;
+            width: 80%; /* Reduced width to 80% of the parent container */
+            margin: 0 auto; /* Center the button */
+            padding: 6px;
+            margin-top: 8px;
+            background-color: #0000cc;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .detect-button:hover {
+            background-color: #ff1a1a;
+        }
+
+        .modal-footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #0000cc;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .link {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .modal-container {
+                width: 60%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal-container">
+        <div class="modal-header">
+            <h1>Dark Enforcement</h1>
+        </div>
+        <div class="modal-content">
+            <div class="container">
+                <p class="label">dark patterns</p>
+                <p class="number">n/a</p>
+            </div>
+            <button class="analyze-button" type="button">DETECT DARK PATTERN</button>
+        </div>
+        <div class="modal-footer">
+            <a class="link" href="https://darkpatterns.org" target="_blank">What are dark patterns?</a>
+        </div>
+    </div>
+</body>
+
+</html>

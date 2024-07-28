@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirm Shaming Detector </title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #result {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Confirm Shaming Detector</h1>
+    <div>
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url">
+        <button onclick="analyzeURL()">Analyze</button>
+    </div>
+    <div id="result"></div>
+</div>
+
+<script>
+function analyzeURL() {
+    const url = document.getElementById('url').value;
+    fetch('http://127.0.0.1:5000/analyze', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url: url })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Display the highlighted text in the result div
+        document.getElementById('result').innerHTML = data.highlightedText;
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
+</body>
+</html>
